@@ -1,42 +1,72 @@
 <head>
-    <style> body { margin: 0; } </style>
-  
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
     <script src="//unpkg.com/globe.gl"></script>
-  <!--    <script src="../../dist/globe.gl.js"></script>-->
-  </head>
-  
-  <body>
-  <div id="globeViz"></div>
-  
-  <script type="module">
-    import * as THREE from '//unpkg.com/three/build/three.module.js';
-  
-    const TILE_MARGIN = 0.35; // degrees
-  
-    // Gen random data
-    const GRID_SIZE = [60, 20];
-    const COLORS = ['red', 'green', 'yellow', 'blue', 'orange', 'pink', 'brown', 'purple', 'magenta'];
-  
-    const materials = COLORS.map(color => new THREE.MeshLambertMaterial({ color, opacity: 0.6, transparent: true }));
-    const tileWidth = 360 / GRID_SIZE[0];
-    const tileHeight = 180 / GRID_SIZE[1];
-    const tilesData = [];
-    [...Array(GRID_SIZE[0]).keys()].forEach(lngIdx =>
-      [...Array(GRID_SIZE[1]).keys()].forEach(latIdx =>
-        tilesData.push({
-          lng: -180 + lngIdx * tileWidth,
-          lat: -90 + (latIdx + 0.5) * tileHeight,
-          material: materials[Math.floor(Math.random() * materials.length)]
-        })
-      )
-    );
-  
-    Globe()
-      .tilesData(tilesData)
-      .tileWidth(tileWidth - TILE_MARGIN)
-      .tileHeight(tileHeight - TILE_MARGIN)
-      .tileMaterial('material')
-      (document.getElementById('globeViz'))
-  
-  </script>
-  </body>
+</head>
+
+<body>
+    <div id="globeViz"></div>
+
+    <script type="module">
+        import * as THREE from '//unpkg.com/three/build/three.module.js';
+
+        // WMTS tile template URL from capabilities
+        const tileUrlTemplate = 'https://earth.gov/ghgcenter/api/raster/searches/37b846993d10ef3d9fd846d10bfb8885/tiles/WebMercatorQuad/{TileMatrix}/{TileCol}/{TileRow}@1x.png?assets=co2-emissions&colormap_name=jet&rescale=-10%2C60';
+
+        // Earth texture (blue marble)
+        const earthTextureUrl = 'https://unpkg.com/three-globe@2.32.0/example/img/earth-blue-marble.jpg';
+
+        // Example zoom level and row/col calculations
+        const zoomLevel = 2;
+        const numCols = Math.pow(2, zoomLevel);
+        const numRows = numCols;
+        const tilesData = [];
+
+        // Tile width and height based on the grid
+        const tileWidth = 360 / numCols;
+        const tileHeight = 360 / numRows; // Fixed height to maintain aspect ratio
+
+        // Load the tiles and adjust lat/lng to Web Mercator projection
+        for (let col = 0; col < numCols; col++) {
+            for (let row = 0; row < numRows; row++) {
+                // Correct the longitude and latitude calculations
+                const lng = -135 + (col * tileWidth); // Longitude from -180 to 180
+                const lat = 135 - (row * tileHeight); // Latitude from 90 to -90
+
+                tilesData.push({
+                    lng: lng,
+                    lat: lat,
+                    tileUrl: tileUrlTemplate
+                        .replace('{TileMatrix}', zoomLevel)
+                        .replace('{TileCol}', col)
+                        .replace('{TileRow}', row),
+                    material: new THREE.MeshBasicMaterial({
+                        map: new THREE.TextureLoader().load(tileUrlTemplate
+                            .replace('{TileMatrix}', zoomLevel)
+                            .replace('{TileCol}', col)
+                            .replace('{TileRow}', row)),
+                        opacity: 0.8,
+                        transparent: true
+                    })
+                });
+            }
+        }
+
+
+        // Create the Globe with Earth texture as the base
+        const globe = Globe()
+            .globeImageUrl(earthTextureUrl) // Set the Earth texture here
+            .tilesData(tilesData)
+            .tileWidth(tileWidth) // Use the corrected tileWidth
+            .tileHeight(tileHeight) // Use the fixed tileHeight
+            .tileMaterial('material');
+
+        // Render the globe
+        globe(document.getElementById('globeViz'));
+
+
+    </script>
+</body>
