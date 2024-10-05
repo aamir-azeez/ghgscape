@@ -115,5 +115,7 @@ GHGScape should be used to find correlations that were overlooked. It should be 
 
 ## References
 [Tool Used (free and open source): globe.gl](https://unpkg.com/globe.gl@2.33.0/dist/globe.gl.min.js)
+
 [Tool Used (free and open source): three.js](https://unpkg.com/three@0.169.0/build/three.module.js)
+
 [Image Used (NASA Resource): Earth Blue Marble](https://visibleearth.nasa.gov/images/73909/december-blue-marble-next-generation-w-topography-and-bathymetry)
