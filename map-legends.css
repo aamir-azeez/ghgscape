@@ -1,0 +1,61 @@
+#co2 {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(0, 0, 128) 0%, rgb(0, 0, 187) 5.26316%, rgb(0, 0, 246) 10.5263%, rgb(0, 32, 255) 15.7895%, rgb(0, 84, 255) 21.0526%, rgb(0, 140, 255) 26.3158%, rgb(0, 192, 255) 31.5789%, rgb(15, 248, 231) 36.8421%, rgb(57, 255, 190) 42.1053%, rgb(102, 255, 144) 47.3684%, rgb(144, 255, 102) 52.6316%, rgb(190, 255, 57) 57.8947%, rgb(231, 255, 15) 63.1579%, rgb(255, 211, 0) 68.4211%, rgb(255, 163, 0) 73.6842%, rgb(255, 111, 0) 78.9474%, rgb(255, 63, 0) 84.2105%, rgb(246, 11, 0) 89.4737%, rgb(187, 0, 0) 94.7368%, rgb(128, 0, 0) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#npp {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 244, 249) 0%, rgb(233, 227, 240) 11.1111%, rgb(217, 195, 223) 22.2222%, rgb(205, 160, 205) 33.3333%, rgb(213, 122, 186) 44.4444%, rgb(227, 74, 159) 55.5556%, rgb(223, 33, 121) 66.6667%, rgb(193, 14, 81) 77.7778%, rgb(146, 0, 63) 88.8889%, rgb(103, 0, 31) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
