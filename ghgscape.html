@@ -83,13 +83,6 @@
             background: #eae3ef;
         }
 
-        #sourceCodeBtn img {
-            width: 20px;
-            height: 20px;
-            vertical-align: bottom;
-            margin-right: 5px;
-        }
-
 
         #sourceCodeBtn {
             position: absolute;
@@ -110,6 +103,29 @@
         }
 
         #sourceCodeBtn:active {
+            background-color: #f1dcfa;
+            transform: scale(0.98);
+        }
+
+        #demoBtn {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: #eae3ef;
+            color: #3c2f46;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 200;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #demoBtn:hover {
+            background-color: #debbee;
+        }
+
+        #demoBtn:active {
             background-color: #f1dcfa;
             transform: scale(0.98);
         }
@@ -213,6 +229,10 @@
     </div>
 
     <button id="sourceCodeBtn" onclick="window.open('https://github.com/aamir-azeez/ghgscape/blob/main/ghgscape.html')">
+        View the Source Code ↗
+    </button>
+
+    <button id="demoBtn" onclick="window.open('https://www.youtube.com/watch?v=Fa56Ri7FWvg')">
         View the Source Code ↗
     </button>
 
