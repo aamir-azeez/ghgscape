@@ -44,6 +44,17 @@
             /* Enable vertical scrolling */
         }
 
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            /* Prevent overflow on the body */
+        }
+
+        #resolutionValue {
+            display: block;
+            text-align: center;
+        }
 
         #globeViz {
             width: 100vw;
@@ -218,7 +229,7 @@
         <br>
         <label for="resolutionSlider">Select Resolution (1x - 4x):</label>
         <input type="range" id="resolutionSlider" min="1" max="4" value="1">
-        <span id="resolutionValue">1x</span>
+        <span id="resolutionValue">Current: 1x</span>
 
         <div id="dataButtons">
             <button class="data-btn" data-source="xco2" data-tag="both">Average Dry-Air Column CO₂</button>
@@ -434,7 +445,7 @@
         document.getElementById('resolutionSlider').addEventListener('input', (event) => {
             const resolution = event.target.value;
             currentResolution = resolution;
-            document.getElementById('resolutionValue').innerText = `${resolution}x`;
+            document.getElementById('resolutionValue').innerText = `Current: ${resolution}x`;
 
             // Reload tiles with the new resolution using the stored current data source
             if (currentDataSource) {
