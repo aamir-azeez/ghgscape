@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta property="og:title" content="Aamir Abdul Azeez - GHGScape">
+    <meta property="og:title" content="GHGScape - Aamir Abdul Azeez">
     <meta property="og:url" content="https://aamirazeez.com/ghgscape">
     <title>GHGScape</title>
     <link rel="stylesheet" href="https://aamirazeez.com/aamir.css" media="screen">
@@ -219,7 +219,7 @@
             background-color: #8a6b97;
         }
     </style>
-    <script src="//unpkg.com/globe.gl"></script>
+    <script src="modules/globe.gl.js"></script>
 </head>
 
 <body>
@@ -295,7 +295,7 @@
     <div id="globeViz"></div>
 
     <script type="module">
-        import * as THREE from '//unpkg.com/three/build/three.module.js';
+        import * as THREE from 'modules/three.module.js';
 
         let currentDataSource = null;
 
