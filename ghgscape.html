@@ -212,7 +212,7 @@
     </div>
 
     <button id="sourceCodeBtn" onclick="window.open('https://github.com/aamir-azeez/ghgscape/blob/main/ghgscape.html')">
-        <img src="assets/github.svg" alt="GitHub">View the Source Code
+        <img src="images/github.svg" alt="GitHub">View the Source Code
     </button>
 
     <div id="options">
@@ -445,7 +445,11 @@
         document.getElementById('resolutionSlider').addEventListener('input', (event) => {
             const resolution = event.target.value;
             currentResolution = resolution;
-            document.getElementById('resolutionValue').innerText = `Current: ${resolution}x`;
+            var restext = `Current: ${resolution}x`
+            if (currentResolution == 4){
+                restext = restext + " [Warning: Slow!]"
+            }
+            document.getElementById('resolutionValue').innerText = restext;
 
             // Reload tiles with the new resolution using the stored current data source
             if (currentDataSource) {
@@ -526,7 +530,7 @@ Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
 Data Latency: N/A`,
-            "nlcsl": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
+            "crop": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
 CO&#8322; emissions from lateral flux of carbon in (positive) or out (negative) from crops<br>
 <br>
@@ -537,7 +541,7 @@ Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
 Data Latency: N/A`,
-            "nlcsl": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
+            "ffcem": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
 CO&#8322; emissions from the burning of fossil fuels and release of carbon due to cement production (positive flux from land surface to the atmosphere)<br>
 <br>
@@ -637,16 +641,16 @@ Spatial Resolution: 0.1&deg; x 0.1&deg;<br>
 Data Units: Grams of Carbon per square meter per day (g Carbon/m&sup2;/day)<br>
 Data Type: Research<br>
 Data Latency: Less than a year, typically 6 months`,
-            "woodfuel": `NASA &amp;middot; Global &amp;middot; Monthly &amp;middot; g Carbon/m&amp;sup2;/day<br><br>
-<br><br>
-Model-estimated flux of carbon to the atmosphere from wood burned for fuel<br><br>
-<br><br>
-Temporal Extent: January 1, 2001 - December 31, 2023<br><br>
-Temporal Resolution: Daily and Monthly Averages<br><br>
-Spatial Extent: Global<br><br>
-Spatial Resolution: 0.1&amp;deg; x 0.1&amp;deg;<br><br>
-Data Units: Grams of Carbon per square meter per day (g Carbon/m&amp;sup2;/day)<br><br>
-Data Type: Research<br><br>
+            "woodfuel": `NASA &middot; Global &middot; Monthly &middot; g Carbon/m&sup2;/day<br>
+<br>
+Model-estimated flux of carbon to the atmosphere from wood burned for fuel<br>
+<br>
+Temporal Extent: January 1, 2001 - December 31, 2023<br>
+Temporal Resolution: Daily and Monthly Averages<br>
+Spatial Extent: Global<br>
+Spatial Resolution: 0.1&deg; x 0.1&deg;<br>
+Data Units: Grams of Carbon per square meter per day (g Carbon/m&sup2;/day)<br>
+Data Type: Research<br>
 Data Latency: Less than a year, typically 6 months`,
             "wetlandch4": `NASA &middot; Global &middot; Monthly &middot; kg CH&#8324;/m&sup2;/s<br>
 <br>
