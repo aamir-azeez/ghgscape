@@ -154,8 +154,9 @@
             const dataButtons = document.querySelectorAll('.data-btn');
 
             // Show or hide buttons based on the selected tag
-            dataButtons.forEach(btn => {
+            dataButtons.forEach(btn => {    
                 const dataTag = btn.getAttribute('data-tag');
+                const dataTags = btn.getAttribute('data-tag').split(',');
                 if (selectedTag === 'all' || dataTag === selectedTag) {
                     btn.classList.remove('hidden');
                 } else {
