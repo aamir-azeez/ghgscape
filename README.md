@@ -112,3 +112,8 @@ GHGScape should be used to find correlations that were overlooked. It should be 
 [NASA Resource: Pyrogenic CH₄ Emission](https://earth.gov/ghgcenter/api/raster/searches/ac83329cc2fe54db02348d6dac313dbc/WebMercatorQuad/WMTSCapabilities.xml?assets=pyrogenic&amp;colormap_name=purd&amp;rescale=0.032%2C1.6)
 
 [NASA Resource: Population Density](https://earth.gov/ghgcenter/api/raster/searches/822d8911ace54263c201fffc56d8e752/WebMercatorQuad/WMTSCapabilities.xml?assets=population-density&amp;colormap_name=ylorrd&amp;rescale=0%2C1000)
+
+## References
+[Tool Used (free and open source): globe.gl](https://unpkg.com/globe.gl@2.33.0/dist/globe.gl.min.js)
+[Tool Used (free and open source): three.js](https://unpkg.com/three@0.169.0/build/three.module.js)
+[Image Used (NASA Resource): Earth Blue Marble](https://visibleearth.nasa.gov/images/73909/december-blue-marble-next-generation-w-topography-and-bathymetry)
