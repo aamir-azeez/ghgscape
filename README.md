@@ -1,6 +1,6 @@
 <p align="center">
   <a href="[https://aamirazeez.com/story/diffabled](https://aamirazeez.com/ghgscape)">
-    <img alt="GHGScape Preview" src="previews/ghgscape-preview2.jpg" width="600" />
+    <img alt="GHGScape Preview" src="previews/ghgscape-preview2.jpg" width="600"/>
     <h2 align="center">GHGScape</h2>
 </p>
 GHGScape allows to easily differentiate between between natural and anthropgenic emissions. It revolutionizes the way we think about greenhouse gas emissions.
@@ -15,19 +15,54 @@ Check out GHGScape here:
 https://aamirazeez.com/ghgscape
 
 ## High-Level Summary
-I built GHGScape which provides a visually intuitive way to interpret large and complex datasets, allowing for a clearer understanding of greenhouse gas emissions.
-
-GHGScape fulfills the challenge by mapping both human-caused and natural greenhouse gas emissions all in one web app. It separates the emissions by tags like human-caused, natural or both. Selecting both allows the user to see which source truly contributes to the warming of our planet. GHGScape is important as it shows the real-world impact of human pollution that we don't often get to see firsthand.
+Introducing GHGScape: it provides a visually intuitive way to interpret large and complex datasets, allowing for a clearer understanding of greenhouse gas emissions. GHGScape fulfills the challenge by mapping both human-caused and natural greenhouse gas emissions all in one web app. It separates the emissions by tags like human-caused, natural or both. Selecting both allows the user to see which source truly contributes to the warming of our planet. GHGScape is important as it shows the real-world impact of human pollution that we don't often get to see firsthand.
 
 ## What exactly does it do?
+GHGScape provides an interactive 3D model of the Earth, mapping out greenhouse gas emissions in different regions. It allows us to differentiate between natural and anthropogenic emissions.
 
 ## How does it work?
+- Users can select from tags like "human-caused emissions", "natural sources and sinks", or datasets where both are included, allowing them to see if humans or natural sources truly affect the planet and its warming.
+- Users can click (or tap), drag to rotate and zoom to view different regions of the planet and their greenhouse gas emissions.
+- Information about the dataset used is also presented for the user to allow for further research.
 
-## What benefits does it have?
+## Example
+If you use GHGScape to view Net Primary Production (NPP), which is the rate at which plants produce and store carbon, you will see that it is concentrated around areas like the Amazon rainforest (see below image):
 
-## What do you hope to achieve?
+<img alt="GHGScape Preview" src="previews/amazon-rainforest-npp.jpg" width="600"/>
 
-## What tools, coding languages, hardware, or software did you use to develop your project?
+Now let's compare it to human-caused emissions like the CO2 produced from burning fossil fuels in the same area (see below image):
+
+<img alt="GHGScape Preview" src="previews/amazon-rainforest-ffco2.jpg" width="600"/>
+
+We can assume that this is because there are not that many people living in the Amazon rainforest using urban facilities and producing emissions. We can not only assume this, but also confirm it with GHGScape's World Population Density view (see below image)!
+
+<img alt="GHGScape Preview" src="previews/amazon-rainforest-pop.jpg" width="600"/>
+
+GHGScape allows us to simply toggle between these datasets and visualize them immediately. Amazing!
+
+## Benefits
+- Easily visualize the impact of humans on the environment.
+- Correlate human-caused emissions to global emission levels and global warming.
+- An easy-to-understand interface appealing to all ages.
+- Uses US GHG (NASA resource) datasets dynamically, updating GHGScape as soon as the US GHG data updates with its changes.
+
+## What does GHGScape hope to achieve?
+GHGScape should be used to find correlations that were overlooked. It should be used as a tool to visualize data for research and teaching. One day, it may even be commonplace in schools!
+
+## Coding Languages Used
+1. JavaScript
+2. React (JavaScript library)
+3. HTML
+4. CSS
+5. Python (for quick and simple automation)
+6. Windows Batch (for file management)
+
+## Tools/Software Used
+1. Visual Studio Code
+2. Inkscape (FOSS; used for crafting vector images)
+3. Squoosh Command Line (FOSS; used for compressing images)
+4. Cloudflare (to cache files on the website)
+5. Mozilla Developer Tools
 
 ## Space Agency Data Used
 [NASA Resource: Average Dry-Air Column CO₂ (XCO₂)](https://earth.gov/ghgcenter/api/raster/searches/08f476b6d4343d87fce86fc20989abcb/WebMercatorQuad/WMTSCapabilities.xml?assets=xco2&amp;colormap_name=magma&amp;rescale=412%2C422)
@@ -77,3 +112,10 @@ GHGScape fulfills the challenge by mapping both human-caused and natural greenho
 [NASA Resource: Pyrogenic CH₄ Emission](https://earth.gov/ghgcenter/api/raster/searches/ac83329cc2fe54db02348d6dac313dbc/WebMercatorQuad/WMTSCapabilities.xml?assets=pyrogenic&amp;colormap_name=purd&amp;rescale=0.032%2C1.6)
 
 [NASA Resource: Population Density](https://earth.gov/ghgcenter/api/raster/searches/822d8911ace54263c201fffc56d8e752/WebMercatorQuad/WMTSCapabilities.xml?assets=population-density&amp;colormap_name=ylorrd&amp;rescale=0%2C1000)
+
+## References
+[Tool Used (free and open source): globe.gl](https://unpkg.com/globe.gl@2.33.0/dist/globe.gl.min.js)
+
+[Tool Used (free and open source): three.js](https://unpkg.com/three@0.169.0/build/three.module.js)
+
+[Image Used (NASA Resource): Earth Blue Marble](https://visibleearth.nasa.gov/images/73909/december-blue-marble-next-generation-w-topography-and-bathymetry)
