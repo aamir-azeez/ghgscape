@@ -46,7 +46,8 @@
         <div id="dataButtons">
             <button class="data-btn" data-source="co2-emissions" data-tag="human-caused emissions">CO₂ Emissions (human-caused)</button>
             <button class="data-btn" data-source="xco2" data-tag="human-caused emissions">Average Dry-Air Column CO₂</button>
-            <button class="data-btn" data-source="npp" data-tag="natural sources and sinks">Net Primary Production (natural)</button>
+            <button class="data-btn" data-source="npp" data-tag="natural sources and sinks">Net Primary Production (NPP) (natural)</button>
+            <button class="data-btn" data-source="priori" data-tag="natural sources and sinks">Priori Total (natural)</button>
         </div>
         
         <br>
@@ -74,6 +75,10 @@
             },
             "npp": {
                 url: 'https://earth.gov/ghgcenter/api/raster/searches/055e09c82bf81d02ee96be8565f5bcb8/tiles/WebMercatorQuad/{TileMatrix}/{TileCol}/{TileRow}{Resolution}.png?assets=npp&colormap_name=purd&rescale=0%2C8',
+                tags: "natural sources and sinks"
+            },
+            "priori": {
+                url: 'https://earth.gov/ghgcenter/api/raster/searches/17feb26d25fd90ad87845406aba9955e/tiles/WebMercatorQuad/{TileMatrix}/{TileCol}/{TileRow}@1x.png?assets=prior-total&colormap_name=spectral_r&rescale=0%2C0.3',
                 tags: "natural sources and sinks"
             }
         };
@@ -155,9 +160,8 @@
 
             // Show or hide buttons based on the selected tag
             dataButtons.forEach(btn => {    
-                const dataTag = btn.getAttribute('data-tag');
                 const dataTags = btn.getAttribute('data-tag').split(',');
-                if (selectedTag === 'all' || dataTag === selectedTag) {
+                if (selectedTag === 'all' || dataTags.includes(selectedTag)) {
                     btn.classList.remove('hidden');
                 } else {
                     btn.classList.add('hidden');
