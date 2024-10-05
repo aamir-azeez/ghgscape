@@ -27,12 +27,15 @@ GHGScape provides an interactive 3D model of the Earth, mapping out greenhouse g
 
 ## Example
 If you use GHGScape to view Net Primary Production (NPP), which is the rate at which plants produce and store carbon, you will see that it is concentrated around areas like the Amazon rainforest (see below image):
+
 <img alt="GHGScape Preview" src="previews/amazon-rainforest-npp.jpg" width="600"/>
 
 Now let's compare it to human-caused emissions like the CO2 produced from burning fossil fuels in the same area (see below image):
+
 <img alt="GHGScape Preview" src="previews/amazon-rainforest-ffco2.jpg" width="600"/>
 
 We can assume that this is because there are not that many people living in the Amazon rainforest using urban facilities and producing emissions. We can not only assume this, but also confirm it with GHGScape's World Population Density view (see below image)!
+
 <img alt="GHGScape Preview" src="previews/amazon-rainforest-pop.jpg" width="600"/>
 
 GHGScape allows us to simply toggle between these datasets and visualize them immediately. Amazing!
