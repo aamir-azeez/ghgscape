@@ -1,39 +1,204 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Aamir Abdul Azeez - GHGScape">
+    <meta property="og:url" content="https://aamirazeez.com/ghgscape">
+    <title>GHGScape</title>
+    <link rel="stylesheet" href="https://aamirazeez.com/aamir.css" media="screen">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Aamir Abdul Azeez",
+		"logo": "images/CompAamirLogo.svg"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:type" content="website">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#3c2f46">
+    <meta name="msapplication-config" content="https://aamirazeez.com/browserconfig.xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://aamirazeez.com/apple-touch-icon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://aamirazeez.com/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://aamirazeez.com/favicon-16x16.png?v=3">
+    <link rel="manifest" href="https://aamirazeez.com/site.webmanifest?v=3">
+    <link rel="mask-icon" href="https://aamirazeez.com/safari-pinned-tab.svg?v=3" color="#5bbad5">
+    <link rel="shortcut icon" href="https://aamirazeez.com/favicon.ico?v=3">
     <style>
         body {
             margin: 0;
         }
+
         #options {
             position: absolute;
             top: 10px;
             left: 10px;
-            background: rgba(255, 255, 255, 0.8);
+            background: #eae3ef;
             padding: 10px;
+            border-radius: 10px;
             z-index: 100;
         }
+
         #globeViz {
             width: 100vw;
             height: 100vh;
         }
+
+        .data-btn.hidden {
+            display: none;
+        }
+
+        #infoBox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 300px;
+            border-radius: 10px;
+            background: #eae3ef;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        #infoBox h2 {
+            margin: 0;
+            font-size: 18px;
+            background: #eae3ef;
+        }
+
+        #sourceCodeBtn img {
+            width: 20px;
+            height: 20px;
+            vertical-align: bottom;
+            margin-right: 5px;
+        }
+
+
+        #sourceCodeBtn {
+            position: absolute;
+            top: 10px;
+            right: 320px;
+            padding: 10px;
+            background-color: #3c2f46;
+            color: #eae3ef;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 200;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #sourceCodeBtn:hover {
+            background-color: #5a3f67;
+        }
+
+        #sourceCodeBtn:active {
+            background-color: #8a6b97;
+            transform: scale(0.98);
+        }
+
         .data-btn {
             margin-top: 5px;
             display: block;
             padding: 8px;
-            background-color: #007bff;
-            color: white;
+            background-color: #3c2f46;
+            color: #eae3ef;
             text-align: center;
             cursor: pointer;
             border: none;
             border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .data-btn.hidden {
-            display: none;
+
+        .data-btn:hover {
+            background-color: #5a3f67;
+        }
+
+        .data-btn:active {
+            background-color: #8a6b97;
+            transform: scale(0.98);
+        }
+
+        #tags {
+            background-color: #d6b6e4;
+            border: none;
+            border-radius: 8px;
+            padding: 5px;
+            font-size: 16px;
+            color: #3c2f46;
+        }
+
+        /* Style for the slider */
+        #resolutionSlider {
+            -webkit-appearance: none;
+            /* Remove default slider appearance */
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #ac86be;
+            /* Light pink background for the slider track */
+            outline: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        #resolutionSlider:hover {
+            opacity: 1;
+            /* Full opacity when hovering */
+        }
+
+        /* knob */
+        #resolutionSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            /* Remove default thumb (knob) appearance */
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3c2f46;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #resolutionSlider::-webkit-slider-thumb:hover {
+            background-color: #5a3f67;
+        }
+
+        #resolutionSlider:active::-webkit-slider-thumb {
+            background-color: #8a6b97;
+        }
+
+        /* For Firefox */
+        #resolutionSlider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3c2f46;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #resolutionSlider::-moz-range-thumb:hover {
+            background-color: #5a3f67;
+        }
+
+        #resolutionSlider:active::-moz-range-thumb {
+            background-color: #8a6b97;
         }
     </style>
     <script src="//unpkg.com/globe.gl"></script>
 </head>
 
 <body>
+    <div id="infoBox">
+        <h2>Map Information</h2>
+        <p id="mapInfo">Select a data source to view more information.</p>
+    </div>
+
+    <button id="sourceCodeBtn" onclick="window.open('https://github.com/aamir-azeez/ghgscape/blob/main/ghgscape.html')">
+        <img src="github.svg" alt="GitHub">View the Source Code
+    </button>
+
     <div id="options">
         <label for="tags">Select by Tag:</label>
         <select id="tags">
@@ -44,12 +209,16 @@
         <br><br>
 
         <div id="dataButtons">
-            <button class="data-btn" data-source="co2-emissions" data-tag="human-caused emissions">CO₂ Emissions (human-caused)</button>
-            <button class="data-btn" data-source="xco2" data-tag="human-caused emissions">Average Dry-Air Column CO₂</button>
-            <button class="data-btn" data-source="npp" data-tag="natural sources and sinks">Net Primary Production (NPP) (natural)</button>
-            <button class="data-btn" data-source="priori" data-tag="natural sources and sinks">Priori Total (natural)</button>
+            <button class="data-btn" data-source="co2-emissions" data-tag="human-caused emissions">CO₂ Emissions
+                (human-caused)</button>
+            <button class="data-btn" data-source="xco2" data-tag="human-caused emissions">Average Dry-Air Column
+                CO₂</button>
+            <button class="data-btn" data-source="npp" data-tag="natural sources and sinks">Net Primary Production (NPP)
+                (natural)</button>
+            <button class="data-btn" data-source="priori" data-tag="natural sources and sinks">Priori Total
+                (natural)</button>
         </div>
-        
+
         <br>
         <label for="resolutionSlider">Select Resolution (1x - 4x):</label>
         <input type="range" id="resolutionSlider" min="1" max="4" value="1">
@@ -80,7 +249,7 @@
             "priori": {
                 url: 'https://earth.gov/ghgcenter/api/raster/searches/17feb26d25fd90ad87845406aba9955e/tiles/WebMercatorQuad/{TileMatrix}/{TileCol}/{TileRow}@1x.png?assets=prior-total&colormap_name=spectral_r&rescale=0%2C0.3',
                 tags: "natural sources and sinks"
-            }
+            },
         };
 
         let currentResolution = '1';
@@ -95,7 +264,7 @@
             const tilesData = [];
 
             const tileWidth = 360 / numCols;
-            const tileHeight = 360 / numRows; // Fixed height to maintain aspect ratio
+            const tileHeight = 360 / numRows;
 
             for (let col = 0; col < numCols; col++) {
                 for (let row = 0; row < numRows; row++) {
@@ -159,7 +328,7 @@
             const dataButtons = document.querySelectorAll('.data-btn');
 
             // Show or hide buttons based on the selected tag
-            dataButtons.forEach(btn => {    
+            dataButtons.forEach(btn => {
                 const dataTags = btn.getAttribute('data-tag').split(',');
                 if (selectedTag === 'all' || dataTags.includes(selectedTag)) {
                     btn.classList.remove('hidden');
@@ -179,6 +348,50 @@
 
         // Initial load with CO₂ Emissions
         loadTiles('co2-emissions', currentResolution);
+
+        const mapInformation = {
+            "co2-emissions": `Fossil Fuel CO₂ Emissions<br>
+                      NASA / NIES · Global · Monthly · tonne C/km²/month<br>
+                      <br>Model-estimated monthly, 1 km CO₂ emissions created using space-based nighttime light data and individual power plant emission/location profiles.<br>
+                      <br>Temporal Extent: January 2000 - December 2022<br>
+                      Temporal Resolution: Monthly<br>
+                      Spatial Extent: Global<br>
+                      Spatial Resolution: 1 km x 1 km<br>
+                      Data Units: Metric tonnes of carbon per 1 km x 1 km cell per month (tonne C/km²/month)<br>
+                      Data Type: Research<br>
+                      Data Latency: Updated annually, following the release of an updated BP Statistical Review of World Energy report.`,
+            "xco2": `Average Dry-Air Column CO₂ (XCO₂)<br>
+             NASA · Global · Daily · ppm<br>
+             <br>Daily dry air column-averaged mole fractions of carbon dioxide created from data assimilations of OCO-2 satellite retrievals.<br>
+             <br>Temporal Extent: January 1, 2015 - February 28, 2022<br>
+             Temporal Resolution: Daily<br>
+             Spatial Extent: Global<br>
+             Spatial Resolution: 0.5° x 0.625°<br>
+             Data Units: Parts per million (ppm)<br>
+             Data Type: Research<br>
+             Data Latency: 2-3 months.`,
+            "npp": `Net Primary Production (NPP)<br>
+            Global · Monthly · gC/m²/day<br>
+            <br>Represents the total carbon fixed by plants through photosynthesis, subtracting plant respiration.<br>
+            <br>Temporal Extent: 2001 - present<br>
+            Temporal Resolution: Monthly<br>
+            Spatial Extent: Global<br>
+            Spatial Resolution: 0.5° x 0.5°<br>
+            Data Units: grams of carbon per square meter per day (gC/m²/day)<br>
+            Data Type: Research<br>
+            Data Latency: 1-2 months.`
+        };
+
+        // Event listener for data source buttons to update map info
+        document.querySelectorAll('.data-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const selectedDataSource = event.target.getAttribute('data-source');
+                loadTiles(selectedDataSource, currentResolution);
+
+                // Update the map info
+                document.getElementById('mapInfo').innerHTML = mapInformation[selectedDataSource] || "No information available.";
+            });
+        });
+
     </script>
 </body>
- 
