@@ -29,6 +29,37 @@
     cursor: auto;
 }
 
+#pop{
+    --base-font-family: "Inter",sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(255, 255, 178) 0%, rgb(255, 221, 160) 16.6667%, rgb(255, 195, 129) 33.3333%, rgb(255, 163, 84) 50%, rgb(255, 133, 36) 66.6667%, rgb(255, 103, 21) 83.3333%, rgb(255, 0, 0) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
 #npp {
     --base-font-family: "Inter", sans-serif;
     --veda-color-primary: #082a64;
