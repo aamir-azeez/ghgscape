@@ -32,6 +32,7 @@
         }
 
         #options {
+            width: 400px;
             position: absolute;
             top: 10px;
             left: 10px;
@@ -98,11 +99,13 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        #sourceCodeBtn:hover {
+        #sourceCodeBtn:hover,
+        #demoBtn:hover {
             background-color: #debbee;
         }
 
-        #sourceCodeBtn:active {
+        #sourceCodeBtn:active,
+        #demoBtn:active {
             background-color: #f1dcfa;
             transform: scale(0.98);
         }
@@ -119,15 +122,6 @@
             cursor: pointer;
             z-index: 200;
             transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        #demoBtn:hover {
-            background-color: #debbee;
-        }
-
-        #demoBtn:active {
-            background-color: #f1dcfa;
-            transform: scale(0.98);
         }
 
         .data-btn {
@@ -218,12 +212,59 @@
         #resolutionSlider:active::-moz-range-thumb {
             background-color: #8a6b97;
         }
+
+        #infoToggle,
+        #optionsToggle {
+            position: absolute;
+            top: 10px;
+            background: #eae3ef;
+            color: #3c2f46;
+            border: none;
+            border-radius: 10px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #infoToggle {
+            top: 5px;
+            left: -35px;
+        }
+
+        #optionsToggle {
+            z-index: 101;
+            left: 415px;
+        }
+
+        .hidden {
+            transform: translateX(310px);
+        }
+
+        .hiddenOptions {
+            transform: translateX(-415px);
+        }
+
+        #infoBox,
+        #optionsToggle,
+        #options {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #optionsToggle:hover,
+        #infoToggle:hover {
+            background-color: #debbee;
+        }
     </style>
     <script src="/modules/globe.gl.js"></script>
 </head>
 
 <body>
     <div id="infoBox">
+        <button id="infoToggle" onclick="toggleInfo()">-</button>
         <h2>Map Information</h2>
         <p id="mapInfo">Select a data source to view more information.</p>
     </div>
@@ -235,7 +276,6 @@
     <button id="demoBtn" onclick="window.open('https://www.youtube.com/watch?v=Fa56Ri7FWvg','')">
         View the Demo ↗
     </button>
-
     <div id="options">
         <label for="tags">Select by Tag:</label>
         <select id="tags">
@@ -291,8 +331,26 @@
         </div>
         <!-- [change]1 -->
     </div>
+    <button id="optionsToggle" onclick="toggleOptions()">-</button>
 
     <div id="globeViz"></div>
 
     <script type="module" src="ghgscape-logic.js"></script>
+    <script> function toggleInfo() {
+            const infoBox = document.getElementById('infoBox');
+            const infoToggle = document.getElementById('infoToggle');
+
+            infoBox.classList.toggle('hidden');
+            infoToggle.textContent = infoBox.classList.contains('hidden') ? 'ℹ️' : '-';
+        }
+
+        function toggleOptions() {
+            const options = document.getElementById('options');
+            const optionsToggle = document.getElementById('optionsToggle');
+
+            options.classList.toggle('hiddenOptions');
+            optionsToggle.classList.toggle('hiddenOptions');
+            optionsToggle.textContent = options.classList.contains('hiddenOptions') ? '⚙️' : '-';
+        }
+    </script>
 </body>
