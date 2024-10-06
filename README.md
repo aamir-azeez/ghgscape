@@ -1,7 +1,8 @@
 <p align="center">
-  <a href="[https://aamirazeez.com/story/diffabled](https://aamirazeez.com/ghgscape)">
+  <a href="https://aamirazeez.com/ghgscape">
     <img alt="GHGScape Preview" src="previews/ghgscape-preview2.jpg" width="600"/>
     <h2 align="center">GHGScape</h2>
+    </a>
 </p>
 GHGScape allows to easily differentiate between between natural and anthropgenic emissions. It revolutionizes the way we think about greenhouse gas emissions.
 
