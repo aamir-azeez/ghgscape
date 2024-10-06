@@ -194,6 +194,7 @@ document.getElementById('resolutionSlider').addEventListener('input', (event) =>
     document.getElementById('resolutionValue').innerText = restext;
 
     // Reload tiles with the new resolution using the stored current data source
+    currentTiles = document.getElementById('tilesSlider').value
     if (currentDataSource) {
         loadTiles(currentDataSource, currentResolution, currentTiles);
     }
@@ -220,6 +221,7 @@ document.getElementById('tilesSlider').addEventListener('input', (event) => {
     document.getElementById('tilesValue').innerText = restext;
 
     // Reload tiles with the new number of tiles using the stored current data source
+    currentResolution = document.getElementById('resolutionSlider').value
     if (currentDataSource) {
         loadTiles(currentDataSource, currentResolution, currentTiles);
     }
