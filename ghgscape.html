@@ -74,6 +74,8 @@
             background: #eae3ef;
             padding: 10px;
             z-index: 100;
+            max-height: 75%;
+            overflow-y: auto;
         }
 
         #infoBox h2 {
@@ -151,6 +153,7 @@
             padding: 5px;
             font-size: 16px;
             color: #3c2f46;
+            max-width: 100%;
         }
 
         /* Style for the slider */
@@ -229,8 +232,8 @@
         }
 
         #infoToggle {
-            top: 5px;
-            left: -35px;
+            z-index: 101;
+            right: 315px;
         }
 
         #optionsToggle {
@@ -248,7 +251,8 @@
 
         #infoBox,
         #optionsToggle,
-        #options {
+        #options,
+        #infoToggle {
             transition: transform 0.3s ease-in-out;
         }
 
@@ -262,10 +266,10 @@
 
 <body>
     <div id="infoBox">
-        <button id="infoToggle" onclick="toggleInfo()">-</button>
         <h2>Map Information</h2>
         <p id="mapInfo">Select a data source to view more information.</p>
     </div>
+    <button id="infoToggle" onclick="toggleInfo()">-</button>
 
     <button id="sourceCodeBtn" onclick="window.open('https://github.com/aamir-azeez/ghgscape/','')">
         View the Source Code ↗
@@ -338,16 +342,20 @@
             const infoBox = document.getElementById('infoBox');
             const infoToggle = document.getElementById('infoToggle');
 
-            if (infoBox.classList.contains('hidden')) {
+            if (infoToggle.classList.contains('hidden')) {
                 infoBox.classList.remove('hidden');
+                infoToggle.classList.remove('hidden');
                 infoBox.style.transform = 'translateX(0)';
+                infoToggle.style.transform = 'translateX(0)';
             } else {
+                infoToggle.classList.add('hidden');
                 infoBox.classList.add('hidden');
                 if (window.innerWidth < 600) {
                     var offset = `${window.innerWidth / 3.125 + 10}px`;
                 } else {
                     var offset = `310px`;
                 }
+                infoToggle.style.transform = `translateX(${offset})`;
                 infoBox.style.transform = `translateX(${offset})`;
             }
 
@@ -367,7 +375,7 @@
                 optionsToggle.classList.add('hiddenOptions');
                 options.classList.add('hiddenOptions');
                 if (window.innerWidth < 600) {
-                    var offset = `-${window.innerWidth / 2 + 15}px`;
+                    var offset = `-${window.innerWidth / 2.5 + 15}px`;
                 } else {
                     var offset = `-415px`;
                 }
@@ -383,15 +391,19 @@
             const optionsToggle = document.getElementById('optionsToggle');
             const hiddenOptions = document.querySelector('.hiddenOptions');
             const infoBox = document.getElementById('infoBox');
+            const infoToggle = document.getElementById('infoToggle');
             const hidden = document.querySelector('.hidden');
 
             if (window.innerWidth < 600) {
-                options.style.width = '50%';
-                optionsToggle.style.left = 'calc(50% + 15px)';
-                if (hiddenOptions) { hiddenOptions.style.transform = `translateX(-${(window.innerWidth / 2 + 15)}px)`; }
+                options.style.width = '40%';
+                optionsToggle.style.left = 'calc(40% + 15px)';
+                if (hiddenOptions) {
+                    hiddenOptions.style.transform = `translateX(-${(window.innerWidth / 2.5 + 15)}px)`;
+                }
                 infoBox.style.width = '32%';
+                infoToggle.style.right = 'calc(32% + 15px)';
                 if (hidden) {
-                    hidden.style.transform = `translateX(-${(window.innerWidth / 3.125 + 10)}px)`;
+                    hidden.style.transform = `translateX(${(window.innerWidth / 3.125 + 10)}px)`;
                 }
             } else {
                 options.style.width = '400px';
@@ -400,6 +412,7 @@
                     hiddenOptions.style.transform = 'translateX(-415px)';
                 }
                 infoBox.style.width = '300px';
+                infoToggle.style.right = '315px';
                 if (hidden) {
                     hidden.style.transform = `translateX(310px)`;
                 }
