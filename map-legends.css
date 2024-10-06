@@ -1,3 +1,654 @@
+#xco2 {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(44, 17, 95) 0%, rgb(114, 31, 129) 25%, rgb(183, 55, 121) 50%, rgb(241, 96, 93) 75%, rgb(254, 176, 120) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#nbe {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(59, 76, 192) 0%, rgb(93, 124, 230) 11.1111%, rgb(130, 166, 251) 22.2222%, rgb(170, 199, 253) 33.3333%, rgb(205, 217, 236) 44.4444%, rgb(234, 212, 200) 55.5556%, rgb(247, 184, 156) 66.6667%, rgb(241, 141, 111) 77.7778%, rgb(217, 88, 71) 88.8889%, rgb(180, 4, 38) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#nce {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(59, 76, 192) 0%, rgb(93, 124, 230) 11.1111%, rgb(130, 166, 251) 22.2222%, rgb(170, 199, 253) 33.3333%, rgb(205, 217, 236) 44.4444%, rgb(234, 212, 200) 55.5556%, rgb(247, 184, 156) 66.6667%, rgb(241, 141, 111) 77.7778%, rgb(217, 88, 71) 88.8889%, rgb(180, 4, 38) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#nlcsl {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(59, 76, 192) 0%, rgb(93, 124, 230) 11.1111%, rgb(130, 166, 251) 22.2222%, rgb(170, 199, 253) 33.3333%, rgb(205, 217, 236) 44.4444%, rgb(234, 212, 200) 55.5556%, rgb(247, 184, 156) 66.6667%, rgb(241, 141, 111) 77.7778%, rgb(217, 88, 71) 88.8889%, rgb(180, 4, 38) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#crop {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(59, 76, 192) 0%, rgb(93, 124, 230) 11.1111%, rgb(130, 166, 251) 22.2222%, rgb(170, 199, 253) 33.3333%, rgb(205, 217, 236) 44.4444%, rgb(234, 212, 200) 55.5556%, rgb(247, 184, 156) 66.6667%, rgb(241, 141, 111) 77.7778%, rgb(217, 88, 71) 88.8889%, rgb(180, 4, 38) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#ffcem {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 244, 249) 0%, rgb(233, 227, 240) 11.1111%, rgb(217, 195, 223) 22.2222%, rgb(205, 160, 205) 33.3333%, rgb(213, 122, 186) 44.4444%, rgb(227, 74, 159) 55.5556%, rgb(223, 33, 121) 66.6667%, rgb(193, 14, 81) 77.7778%, rgb(146, 0, 63) 88.8889%, rgb(103, 0, 31) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#river {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(59, 76, 192) 0%, rgb(93, 124, 230) 11.1111%, rgb(130, 166, 251) 22.2222%, rgb(170, 199, 253) 33.3333%, rgb(205, 217, 236) 44.4444%, rgb(234, 212, 200) 55.5556%, rgb(247, 184, 156) 66.6667%, rgb(241, 141, 111) 77.7778%, rgb(217, 88, 71) 88.8889%, rgb(180, 4, 38) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#wood {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(59, 76, 192) 0%, rgb(93, 124, 230) 11.1111%, rgb(130, 166, 251) 22.2222%, rgb(170, 199, 253) 33.3333%, rgb(205, 217, 236) 44.4444%, rgb(234, 212, 200) 55.5556%, rgb(247, 184, 156) 66.6667%, rgb(241, 141, 111) 77.7778%, rgb(217, 88, 71) 88.8889%, rgb(180, 4, 38) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#rh {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 244, 249) 0%, rgb(233, 227, 240) 11.1111%, rgb(217, 195, 223) 22.2222%, rgb(205, 160, 205) 33.3333%, rgb(213, 122, 186) 44.4444%, rgb(227, 74, 159) 55.5556%, rgb(223, 33, 121) 66.6667%, rgb(193, 14, 81) 77.7778%, rgb(146, 0, 63) 88.8889%, rgb(103, 0, 31) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#nee {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(59, 76, 192) 0%, rgb(103, 136, 238) 14.2857%, rgb(154, 187, 255) 28.5714%, rgb(201, 215, 240) 42.8571%, rgb(237, 209, 194) 57.1429%, rgb(247, 168, 137) 71.4286%, rgb(226, 105, 82) 85.7143%, rgb(180, 4, 38) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#nbe {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(59, 76, 192) 0%, rgb(103, 136, 238) 14.2857%, rgb(154, 187, 255) 28.5714%, rgb(201, 215, 240) 42.8571%, rgb(237, 209, 194) 57.1429%, rgb(247, 168, 137) 71.4286%, rgb(226, 105, 82) 85.7143%, rgb(180, 4, 38) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#fire {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 244, 249) 0%, rgb(233, 227, 240) 11.1111%, rgb(217, 195, 223) 22.2222%, rgb(205, 160, 205) 33.3333%, rgb(213, 122, 186) 44.4444%, rgb(227, 74, 159) 55.5556%, rgb(223, 33, 121) 66.6667%, rgb(193, 14, 81) 77.7778%, rgb(146, 0, 63) 88.8889%, rgb(103, 0, 31) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#woodfuel {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 252, 253) 0%, rgb(220, 233, 242) 14.2857%, rgb(181, 204, 227) 28.5714%, rgb(150, 172, 210) 42.8571%, rgb(140, 125, 186) 57.1429%, rgb(137, 77, 163) 71.4286%, rgb(130, 21, 128) 85.7143%, rgb(77, 0, 75) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#wetlandch4 {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(44, 17, 95) 0%, rgb(114, 31, 129) 25%, rgb(183, 55, 121) 50%, rgb(241, 96, 93) 75%, rgb(254, 176, 120) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#airsea {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(0, 0, 255) 0%, rgb(51, 153, 255) 16.6667%, rgb(102, 204, 255) 33.3333%, rgb(255, 255, 255) 50%, rgb(255, 102, 204) 66.6667%, rgb(255, 51, 153) 83.3333%, rgb(255, 0, 0) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#priori {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(94, 79, 162) 0%, rgb(56, 142, 186) 11.1111%, rgb(117, 200, 165) 22.2222%, rgb(191, 229, 160) 33.3333%, rgb(241, 249, 169) 44.4444%, rgb(254, 238, 162) 55.5556%, rgb(253, 191, 111) 66.6667%, rgb(246, 123, 74) 77.7778%, rgb(216, 67, 78) 88.8889%, rgb(158, 1, 66) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#posterior {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(94, 79, 162) 0%, rgb(56, 142, 186) 11.1111%, rgb(117, 200, 165) 22.2222%, rgb(191, 229, 160) 33.3333%, rgb(241, 249, 169) 44.4444%, rgb(254, 238, 162) 55.5556%, rgb(253, 191, 111) 66.6667%, rgb(246, 123, 74) 77.7778%, rgb(216, 67, 78) 88.8889%, rgb(158, 1, 66) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#totch4 {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 244, 249) 0%, rgb(233, 227, 240) 11.1111%, rgb(217, 195, 223) 22.2222%, rgb(205, 160, 205) 33.3333%, rgb(213, 122, 186) 44.4444%, rgb(227, 74, 159) 55.5556%, rgb(223, 33, 121) 66.6667%, rgb(193, 14, 81) 77.7778%, rgb(146, 0, 63) 88.8889%, rgb(103, 0, 31) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#microch4 {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 244, 249) 0%, rgb(233, 227, 240) 11.1111%, rgb(217, 195, 223) 22.2222%, rgb(205, 160, 205) 33.3333%, rgb(213, 122, 186) 44.4444%, rgb(227, 74, 159) 55.5556%, rgb(223, 33, 121) 66.6667%, rgb(193, 14, 81) 77.7778%, rgb(146, 0, 63) 88.8889%, rgb(103, 0, 31) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#ffch4 {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 244, 249) 0%, rgb(233, 227, 240) 11.1111%, rgb(217, 195, 223) 22.2222%, rgb(205, 160, 205) 33.3333%, rgb(213, 122, 186) 44.4444%, rgb(227, 74, 159) 55.5556%, rgb(223, 33, 121) 66.6667%, rgb(193, 14, 81) 77.7778%, rgb(146, 0, 63) 88.8889%, rgb(103, 0, 31) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
+#pyroch4 {
+    --base-font-family: "Inter", sans-serif;
+    --veda-color-primary: #082a64;
+    --veda-color-secondary: #E2C044;
+    --veda-color-link: #1565EF;
+    --veda-color-base: #2c3e50;
+    --base-text-increment: 0rem;
+    --base-space-multiplier: 1.5;
+    --scrollbar-width: 17px;
+    color: rgb(27, 38, 49);
+    font-family: Inter, sans-serif;
+    text-transform: none;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "pnum" 0;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: calc(1em + 0.5rem);
+    position: relative;
+    display: block;
+    font-size: 0px;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to right, rgb(247, 244, 249) 0%, rgb(233, 227, 240) 11.1111%, rgb(217, 195, 223) 22.2222%, rgb(205, 160, 205) 33.3333%, rgb(213, 122, 186) 44.4444%, rgb(227, 74, 159) 55.5556%, rgb(223, 33, 121) 66.6667%, rgb(193, 14, 81) 77.7778%, rgb(146, 0, 63) 88.8889%, rgb(103, 0, 31) 100%);
+    margin: 0px 0px 0.125rem;
+    box-shadow: rgba(44, 62, 80, 0.08) 0px 0px 0px 1px inset;
+    cursor: auto;
+}
+
 #co2 {
     --base-font-family: "Inter", sans-serif;
     --veda-color-primary: #082a64;
@@ -29,8 +680,8 @@
     cursor: auto;
 }
 
-#pop{
-    --base-font-family: "Inter",sans-serif;
+#pop {
+    --base-font-family: "Inter", sans-serif;
     --veda-color-primary: #082a64;
     --veda-color-secondary: #E2C044;
     --veda-color-link: #1565EF;

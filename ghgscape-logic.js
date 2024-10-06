@@ -1,8 +1,8 @@
-import * as THREE from 'modules/three.module.js';
+import * as THREE from '/modules/three.module.js';
 
 let currentDataSource = null;
 
-const earthTextureUrl = 'images/earth-blue-marble.jpg';
+const earthTextureUrl = '/images/earth-blue-marble.jpg';
 
 // Predefined data sources with tags
 const dataSources = {
@@ -220,7 +220,8 @@ Spatial extent: Global<br>
 Spatial resolution: 0.5&deg; x 0.625&deg;<br>
 Data units: Parts per million (ppm)<br>
 Data type: Research<br>
-Data Latency: 2-3 months`,
+Data Latency: 2-3 months
+<br><h6>Legend</h2><div id="xco2"></div><span>412</span><span style="float:right">422</span>`,
     "nbe": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
 CO&#8322; emissions from net flux of carbon from terrestrial biosphere to atmosphere (net biosphere exchange) estimated from the OCO-2 v10 MIP LNLGIS ensemble<br>
@@ -231,7 +232,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
-Data Latency: N/A`,
+Data Latency: N/A
+<br><h6>Legend</h2><div id="nbe"></div><span>-1,200</span><span style="float:right">1,200</span>`,
     "nce": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
 CO&#8322; emissions from net flux of carbon from surface to atmosphere (net carbon exchange) estimated from the OCO-2 v10 MIP LNLGIS ensemble<br>
@@ -242,7 +244,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
-Data Latency: N/A`,
+Data Latency: N/A
+<br><h6>Legend</h2><div id="nce"></div><span>-1,200</span><span style="float:right">1,200</span>`,
     "nlcsl": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
 CO&#8322; emissions from net land carbon stock loss (decrease in land carbon) estimated from the OCO-2 v10 MIP LNLGIS ensemble<br>
@@ -253,7 +256,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
-Data Latency: N/A`,
+Data Latency: N/A
+<br><h6>Legend</h2><div id="nlcsl"></div><span>-600</span><span style="float:right">600</span>`,
     "crop": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
 CO&#8322; emissions from lateral flux of carbon in (positive) or out (negative) from crops<br>
@@ -264,7 +268,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
-Data Latency: N/A`,
+Data Latency: N/A
+<br><h6>Legend</h2><div id="crop"></div><span>-100</span><span style="float:right">100</span>`,
     "ffcem": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
 CO&#8322; emissions from the burning of fossil fuels and release of carbon due to cement production (positive flux from land surface to the atmosphere)<br>
@@ -275,7 +280,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
-Data Latency: N/A`,
+Data Latency: N/A
+<br><h6>Legend</h2><div id="ffcem"></div><span>0</span><span style="float:right">450</span>`,
     "river": `NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
 CO&#8322; emissions from lateral flux of carbon in (positive) or out (negative) from rivers<br>
@@ -286,7 +292,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
-Data Latency: N/A`,
+Data Latency: N/A
+<br><h6>Legend</h2><div id="river"></div><span>-50</span><span style="float:right">50</span>`,
     "wood": `Lateral Wood CO&#8322; Flux (Wood)<br>
 NASA / NOAA &middot; Global &middot; Annual &middot; g CO&#8322;/m&sup2;/yr<br>
 <br>
@@ -298,7 +305,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of carbon dioxide per square meter per year (g CO&#8322;/m&sup2;/yr)<br>
 Data Type: Research<br>
-Data Latency: N/A`,
+Data Latency: N/A
+<br><h6>Legend</h2><div id="wood"></div><span>-100</span><span style="float:right">100</span>`,
     "co2": `NASA / NIES &middot; Global &middot; Monthly &middot; tonne C/km&sup2;/month<br>
 <br>
 Model-estimated monthly, 1 km CO&#8322; emissions created using space-based nighttime light data and individual power plant emission/location profiles.<br>
@@ -333,7 +341,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 0.1&deg; x 0.1&deg;<br>
 Data Units: Grams of Carbon per square meter per day (g Carbon/m&sup2;/day)<br>
 Data Type: Research<br>
-Data Latency: Less than a year, typically 6 months`,
+Data Latency: Less than a year, typically 6 months
+<br><h6>Legend</h2><div id="rh"></div><span>0</span><span style="float:right">8</span>`,
     "nee": `NASA &middot; Global &middot; Monthly &middot; g Carbon/m&sup2;/day<br>
 <br>
 Model-estimated net ecosystem exchange (NEE), which is the net carbon flux to the atmosphere from the ecosystem (Rh - NPP)<br>
@@ -344,7 +353,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 0.1&deg; x 0.1&deg;<br>
 Data Units: Grams of Carbon per square meter per day (g Carbon/m&sup2;/day)<br>
 Data Type: Research<br>
-Data Latency: Less than a year, typically 6 months`,
+Data Latency: Less than a year, typically 6 months
+<br><h6>Legend</h2><div id="nee"></div><span>-4</span><span style="float:right">4</span>`,
     "rffn": `NASA &middot; Global &middot; Monthly &middot; g Carbon/m&sup2;/day<br>
 <br>
 Model-estimated net biosphere exchange (NBE), which is the net carbon flux to the atmosphere from the ecosystem, taking into account wildfire and wood fuel burning sources of carbon (Rh + FIRE + FUEL - NPP)<br>
@@ -355,7 +365,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 0.1&deg; x 0.1&deg;<br>
 Data Units: Grams of Carbon per square meter per day (g Carbon/m&sup2;/day)<br>
 Data Type: Research<br>
-Data Latency: Less than a year, typically 6 months`,
+Data Latency: Less than a year, typically 6 months
+<br><h6>Legend</h2><div id="nbe"></div><span>-4</span><span style="float:right">4</span>`,
     "fire": `NASA &middot; Global &middot; Monthly &middot; g Carbon/m&sup2;/day<br>
 <br>
 Model-estimated flux of carbon to the atmosphere from wildfires<br>
@@ -366,7 +377,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 0.1&deg; x 0.1&deg;<br>
 Data Units: Grams of Carbon per square meter per day (g Carbon/m&sup2;/day)<br>
 Data Type: Research<br>
-Data Latency: Less than a year, typically 6 months`,
+Data Latency: Less than a year, typically 6 months
+<br><h6>Legend</h2><div id="fire"></div><span>0</span><span style="float:right">8</span>`,
     "woodfuel": `NASA &middot; Global &middot; Monthly &middot; g Carbon/m&sup2;/day<br>
 <br>
 Model-estimated flux of carbon to the atmosphere from wood burned for fuel<br>
@@ -377,7 +389,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 0.1&deg; x 0.1&deg;<br>
 Data Units: Grams of Carbon per square meter per day (g Carbon/m&sup2;/day)<br>
 Data Type: Research<br>
-Data Latency: Less than a year, typically 6 months`,
+Data Latency: Less than a year, typically 6 months
+<br><h6>Legend</h2><div id="woodfuel"></div><span>0</span><span style="float:right">0.5</span>`,
     "wetlandch4": `NASA &middot; Global &middot; Monthly &middot; kg CH&#8324;/m&sup2;/s<br>
 <br>
 Monthly CH&#8324; emissions from wetlands constructed using an ensemble of climate forcing data sources input to the LPJ-EOSIM model (mean of ERA5 and MERRA-2 layers)<br>
@@ -388,7 +401,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 0.5&deg; x 0.5&deg;<br>
 Data Units: Kilograms of methane per meter squared per second (kg CH&#8324;/m&sup2;/s)<br>
 Data Type: Research<br>
-Data Latency: Updated once every two months`,
+Data Latency: Updated once every two months
+<br><h6>Legend</h2><div id="wetlandch4"></div><span>0</span><span style="float:right">3x10⁻⁹</span>`,
     "airsea": `NASA &middot; Global &middot; Monthly &middot; mmol m&sup2;/s<br>
 <br>
 Monthly mean air-sea CO&#8322; Flux (negative into ocean)<br>
@@ -399,7 +413,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: Approximately 1/3&deg; x 1/3&deg; (at the equator)<br>
 Data Units: Millimoles of CO&#8322; per meter squared per second (mmol m&sup2;/s)<br>
 Data Type: Research<br>
-Data Latency: Updated annually`,
+Data Latency: Updated annually
+<br><h6>Legend</h2><div id="airsea"></div><span>-7x10⁻⁴</span><span style="float:right">7x10⁻⁴</span>`,
     "priori": `NASA &middot; Global &middot; Annual &middot; Tg CH&#8324;/yr<br>
 <br>
 Total methane emissions per grid cell derived from the GEOS-Chem global chemistry transport model<br>
@@ -410,7 +425,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Teragrams of methane per year (Tg CH&#8324;/yr)<br>
 Data Type: Research<br>
-Data Latency: Updated yearly`,
+Data Latency: Updated yearly
+<br><h6>Legend</h2><div id="priori"></div><span>0</span><span style="float:right">0.3</span>`,
     "posterior": `NASA &middot; Global &middot; Annual &middot; Tg CH&#8324;/yr<br>
 <br>
 Total methane emissions per grid cell derived using GOSAT data in the GEOS-Chem global chemistry transport model<br>
@@ -421,7 +437,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Teragrams of methane per year (Tg CH&#8324;/yr)<br>
 Data Type: Research<br>
-Data Latency: Updated yearly`,
+Data Latency: Updated yearly
+<br><h6>Legend</h2><div id="posterior"></div><span>0</span><span style="float:right">0.3</span>`,
     "totch4": `NASA / NOAA &middot; Global &middot; Monthly &middot; g CH&#8324;/m&sup2;/year<br>
 <br>
 Total methane emission from microbial, fossil and pyrogenic sources.<br>
@@ -432,7 +449,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of methane per square meter per year (g CH&#8324;/m&sup2;/year)<br>
 Data Type: Research<br>
-Data Latency: Approximately 2 years`,
+Data Latency: Approximately 2 years
+<br><h6>Legend</h2><div id="totch4"></div><span>0.48</span><span style="float:right">24</span>`,
     "microch4": `NASA / NOAA &middot; Global &middot; Monthly &middot; g CH&#8324;/m&sup2;/year<br>
 <br>
 Emission of methane from all microbial sources, such as wetlands, agriculture and termites.<br>
@@ -443,7 +461,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of methane per square meter per year (g CH&#8324;/m&sup2;/year)<br>
 Data Type: Research<br>
-Data Latency: Approximately 2 years`,
+Data Latency: Approximately 2 years
+<br><h6>Legend</h2><div id="microch4"></div><span>0.3</span><span style="float:right">15</span>`,
     "ffch4": `NASA / NOAA &middot; Global &middot; Monthly &middot; g CH&#8324;/m&sup2;/year<br>
 <br>
 Emission of methane from all fossil sources, such as oil and gas activities and coal mining.<br>
@@ -454,7 +473,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of methane per square meter per year (g CH&#8324;/m&sup2;/year)<br>
 Data Type: Research<br>
-Data Latency: Approximately 2 years`,
+Data Latency: Approximately 2 years
+<br><h6>Legend</h2><div id="ffch4"></div><span>0.24</span><span style="float:right">12</span>`,
     "pyroch4": `NASA / NOAA &middot; Global &middot; Monthly &middot; g CH&#8324;/m&sup2;/year<br>
 <br>
 Emission of methane from all sources of biomass burning, such as wildfires and crop residue burning.<br>
@@ -465,7 +485,8 @@ Spatial Extent: Global<br>
 Spatial Resolution: 1&deg; x 1&deg;<br>
 Data Units: Grams of methane per square meter per year (g CH&#8324;/m&sup2;/year)<br>
 Data Type: Research<br>
-Data Latency: Approximately 2 years`,
+Data Latency: Approximately 2 years
+<br><h6>Legend</h2><div id="pyroch4"></div><span>0.032</span><span style="float:right">1.6</span>`,
     "pop": `NASA &middot; Global &middot; Annual &middot; persons/km&sup2;<br>
 <br>
 Gridded population density estimates for the years 2000, 2005, 2010, 2015, and 2020 from Gridded Population of the World (GPW) version 4, revision 11<br>
@@ -477,7 +498,7 @@ Spatial Resolution: 30 arc-seconds (~1 km at equator)<br>
 Data Units: Number of persons per square kilometer (persons/km&sup2;)<br>
 Data Type: Research<br>
 Data Latency: 5 years
-<br><h6>Legend</h2><div id="pop"></div><span>0</span><span style="float:right">1000</span>`,
+<br><h6>Legend</h2><div id="pop"></div><span>0</span><span style="float:right">1,000</span>`,
 };
 // [change]3
 
