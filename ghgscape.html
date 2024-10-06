@@ -51,7 +51,8 @@
             /* Prevent overflow on the body */
         }
 
-        #resolutionValue {
+        #resolutionValue,
+        #tilesValue {
             display: block;
             text-align: center;
         }
@@ -157,7 +158,8 @@
         }
 
         /* Style for the slider */
-        #resolutionSlider {
+        #resolutionSlider,
+        #tilesSlider {
             -webkit-appearance: none;
             /* Remove default slider appearance */
             width: 100%;
@@ -170,13 +172,15 @@
             transition: opacity 0.3s ease;
         }
 
-        #resolutionSlider:hover {
+        #resolutionSlider:hover,
+        #tilesSlider:hover {
             opacity: 1;
             /* Full opacity when hovering */
         }
 
         /* knob */
-        #resolutionSlider::-webkit-slider-thumb {
+        #resolutionSlider::-webkit-slider-thumb,
+        #tilesSlider::-webkit-slider-thumb {
             -webkit-appearance: none;
             /* Remove default thumb (knob) appearance */
             appearance: none;
@@ -188,16 +192,19 @@
             transition: background-color 0.3s ease;
         }
 
-        #resolutionSlider::-webkit-slider-thumb:hover {
+        #resolutionSlider::-webkit-slider-thumb:hover,
+        #tilesSlider::-webkit-slider-thumb:hover {
             background-color: #5a3f67;
         }
 
-        #resolutionSlider:active::-webkit-slider-thumb {
+        #resolutionSlider:active::-webkit-slider-thumb,
+        #tilesSlider:active::-webkit-slider-thumb {
             background-color: #8a6b97;
         }
 
         /* For Firefox */
-        #resolutionSlider::-moz-range-thumb {
+        #resolutionSlider::-moz-range-thumb,
+        #tilesSlider::-moz-range-thumb {
             width: 20px;
             height: 20px;
             border-radius: 50%;
@@ -206,11 +213,13 @@
             transition: background-color 0.3s ease;
         }
 
-        #resolutionSlider::-moz-range-thumb:hover {
+        #resolutionSlider::-moz-range-thumb:hover,
+        #tilesSlider::-moz-range-thumb:hover {
             background-color: #5a3f67;
         }
 
-        #resolutionSlider:active::-moz-range-thumb {
+        #resolutionSlider:active::-moz-range-thumb,
+        #tilesSlider:active::-moz-range-thumb {
             background-color: #8a6b97;
         }
 
@@ -293,6 +302,9 @@
         <label for="resolutionSlider">Select Resolution (1x - 4x):</label>
         <input type="range" id="resolutionSlider" min="1" max="4" value="1">
         <span id="resolutionValue">Current: 1x</span>
+        <label for="tilesSlider">Select Number of Tiles (4 - 256):</label>
+        <input type="range" id="tilesSlider" min="1" max="4" value="2">
+        <span id="tilesValue">Current: 16 tiles</span>
 
         <div id="dataButtons">
             <button class="data-btn" data-source="xco2" data-tag="both">Average Dry-Air Column CO₂</button>

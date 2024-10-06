@@ -105,12 +105,13 @@ const dataSources = {
 }; // [change]2
 
 let currentResolution = '1';
+let currentTiles = '2';
 
 // Function to load tiles for a given data source and resolution
-function loadTiles(dataSourceKey, resolution) {
+function loadTiles(dataSourceKey, resolution, tilescount) {
     const tileUrlTemplate = dataSources[dataSourceKey].url.replace('@1x', `@${resolution}x`);
 
-    const zoomLevel = 2;
+    const zoomLevel = tilescount;
     const numCols = Math.pow(2, zoomLevel);
     const numRows = numCols;
     const tilesData = [];
@@ -118,10 +119,27 @@ function loadTiles(dataSourceKey, resolution) {
     const tileWidth = 360 / numCols;
     const tileHeight = 360 / numRows;
 
+    if (zoomLevel == 1) {
+        var factor = 90
+    }
+    else {
+        if (zoomLevel == 2) {
+            var factor = 135
+        } else {
+            if (zoomLevel == 3) {
+                var factor = 157.5
+            } else {
+                if (zoomLevel == 4) {
+                    var factor = 169
+                }
+            }
+        }
+    }
+
     for (let col = 0; col < numCols; col++) {
         for (let row = 0; row < numRows; row++) {
-            const lng = -135 + (col * tileWidth);
-            const lat = 135 - (row * tileHeight);
+            const lng = -factor + (col * tileWidth);
+            const lat = factor - (row * tileHeight);
 
             tilesData.push({
                 lng: lng,
@@ -165,9 +183,10 @@ window.addEventListener('resize', (event) => {
 // Render the globe
 globe(document.getElementById('globeViz'));
 
+var resolution = 1
 // Event listener for resolution slider
 document.getElementById('resolutionSlider').addEventListener('input', (event) => {
-    const resolution = event.target.value;
+    var resolution = event.target.value;
     currentResolution = resolution;
     var restext = `Current: ${resolution}x`
     if (currentResolution == 4) {
@@ -177,7 +196,34 @@ document.getElementById('resolutionSlider').addEventListener('input', (event) =>
 
     // Reload tiles with the new resolution using the stored current data source
     if (currentDataSource) {
-        loadTiles(currentDataSource, resolution);
+        loadTiles(currentDataSource, resolution, tiles);
+    }
+});
+
+var tiles = 2
+// Event listener for tiles slider
+document.getElementById('tilesSlider').addEventListener('input', (event) => {
+    const tiles = event.target.value;
+    currentTiles = tiles;
+    var restext = `Current: ${4 ** currentTiles} tiles`
+    if (currentTiles > 2) {
+        if (currentTiles > 3) {
+            restext = restext + " [Warning: VERY Slow!!!]"
+            if (confirm('Loading in 256 tiles may crash your device!\nAre you sure you want to continue?')) {
+            } else {
+                currentTiles = 2
+                var restext = `Current: ${4 ** currentTiles} tiles`
+                document.getElementById('tilesSlider').value = currentTiles;
+            }
+        } else {
+            restext = restext + " [Warning: Slow!]"
+        }
+    }
+    document.getElementById('tilesValue').innerText = restext;
+
+    // Reload tiles with the new number of tiles using the stored current data source
+    if (currentDataSource) {
+        loadTiles(currentDataSource, resolution, tiles);
     }
 });
 
@@ -200,7 +246,7 @@ document.getElementById('tags').addEventListener('change', (event) => {
 document.querySelectorAll('.data-btn').forEach(button => {
     button.addEventListener('click', (event) => {
         currentDataSource = event.target.getAttribute('data-source'); // Set current data source
-        loadTiles(currentDataSource, currentResolution);
+        loadTiles(currentDataSource, currentResolution, currentTiles);
 
         // Update the map info
         document.getElementById('mapInfo').innerHTML = mapInformation[currentDataSource] || "No information available.";
