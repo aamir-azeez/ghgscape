@@ -197,7 +197,6 @@ document.getElementById('tags').addEventListener('change', (event) => {
     });
 });
 
-// Event listener for data source buttons
 document.querySelectorAll('.data-btn').forEach(button => {
     button.addEventListener('click', (event) => {
         currentDataSource = event.target.getAttribute('data-source'); // Set current data source
@@ -501,15 +500,4 @@ Data Latency: 5 years
 <br><h6>Legend</h2><div id="pop"></div><span>0</span><span style="float:right">1,000</span>`,
 };
 // [change]3
-
-// Event listener for data source buttons to update map info
-document.querySelectorAll('.data-btn').forEach(button => {
-    button.addEventListener('click', (event) => {
-        const selectedDataSource = event.target.getAttribute('data-source');
-        loadTiles(selectedDataSource, currentResolution);
-
-        // Update the map info
-        document.getElementById('mapInfo').innerHTML = mapInformation[selectedDataSource] || "No information available.";
-    });
-});
 
