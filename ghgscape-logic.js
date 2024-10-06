@@ -120,8 +120,8 @@ function loadTiles(dataSourceKey, resolution) {
 
     for (let col = 0; col < numCols; col++) {
         for (let row = 0; row < numRows; row++) {
-            const lng = -135 + (col * tileWidth); // Longitude from -180 to 180
-            const lat = 135 - (row * tileHeight); // Latitude from 90 to -90
+            const lng = -135 + (col * tileWidth);
+            const lat = 135 - (row * tileHeight);
 
             tilesData.push({
                 lng: lng,
