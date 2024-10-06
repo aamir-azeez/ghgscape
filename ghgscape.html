@@ -362,7 +362,7 @@
             } else {
                 infoToggle.classList.add('hidden');
                 infoBox.classList.add('hidden');
-                if (window.innerWidth < 600) {
+                if (window.innerWidth < 790) {
                     var offset = `${window.innerWidth / 3.125 + 10}px`;
                 } else {
                     var offset = `310px`;
@@ -386,7 +386,7 @@
             } else {
                 optionsToggle.classList.add('hiddenOptions');
                 options.classList.add('hiddenOptions');
-                if (window.innerWidth < 600) {
+                if (window.innerWidth < 790) {
                     var offset = `-${window.innerWidth / 2.5 + 15}px`;
                 } else {
                     var offset = `-415px`;
@@ -406,7 +406,7 @@
             const infoToggle = document.getElementById('infoToggle');
             const hidden = document.querySelector('.hidden');
 
-            if (window.innerWidth < 600) {
+            if (window.innerWidth < 790) {
                 options.style.width = '40%';
                 optionsToggle.style.left = 'calc(40% + 15px)';
                 if (hiddenOptions) {
