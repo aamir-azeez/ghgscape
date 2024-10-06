@@ -183,7 +183,6 @@ window.addEventListener('resize', (event) => {
 // Render the globe
 globe(document.getElementById('globeViz'));
 
-var resolution = 1
 // Event listener for resolution slider
 document.getElementById('resolutionSlider').addEventListener('input', (event) => {
     var resolution = event.target.value;
@@ -196,11 +195,10 @@ document.getElementById('resolutionSlider').addEventListener('input', (event) =>
 
     // Reload tiles with the new resolution using the stored current data source
     if (currentDataSource) {
-        loadTiles(currentDataSource, resolution, tiles);
+        loadTiles(currentDataSource, currentResolution, currentTiles);
     }
 });
 
-var tiles = 2
 // Event listener for tiles slider
 document.getElementById('tilesSlider').addEventListener('input', (event) => {
     const tiles = event.target.value;
@@ -223,7 +221,7 @@ document.getElementById('tilesSlider').addEventListener('input', (event) => {
 
     // Reload tiles with the new number of tiles using the stored current data source
     if (currentDataSource) {
-        loadTiles(currentDataSource, resolution, tiles);
+        loadTiles(currentDataSource, currentResolution, currentTiles);
     }
 });
 
