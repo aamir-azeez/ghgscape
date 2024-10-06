@@ -41,9 +41,7 @@
             border-radius: 10px;
             z-index: 100;
             max-height: 75%;
-            /* Set a fixed height */
             overflow-y: auto;
-            /* Enable vertical scrolling */
         }
 
         html,
@@ -340,7 +338,19 @@
             const infoBox = document.getElementById('infoBox');
             const infoToggle = document.getElementById('infoToggle');
 
-            infoBox.classList.toggle('hidden');
+            if (infoBox.classList.contains('hidden')) {
+                infoBox.classList.remove('hidden');
+                infoBox.style.transform = 'translateX(0)';
+            } else {
+                infoBox.classList.add('hidden');
+                if (window.innerWidth < 600) {
+                    var offset = `${window.innerWidth / 3.125 + 10}px`;
+                } else {
+                    var offset = `310px`;
+                }
+                infoBox.style.transform = `translateX(${offset})`;
+            }
+
             infoToggle.textContent = infoBox.classList.contains('hidden') ? 'ℹ️' : '-';
         }
 
@@ -348,9 +358,55 @@
             const options = document.getElementById('options');
             const optionsToggle = document.getElementById('optionsToggle');
 
-            options.classList.toggle('hiddenOptions');
-            optionsToggle.classList.toggle('hiddenOptions');
+            if (optionsToggle.classList.contains('hiddenOptions')) {
+                options.classList.remove('hiddenOptions');
+                optionsToggle.classList.remove('hiddenOptions');
+                options.style.transform = 'translateX(0)';
+                optionsToggle.style.transform = 'translateX(0)';
+            } else {
+                optionsToggle.classList.add('hiddenOptions');
+                options.classList.add('hiddenOptions');
+                if (window.innerWidth < 600) {
+                    var offset = `-${window.innerWidth / 2 + 15}px`;
+                } else {
+                    var offset = `-415px`;
+                }
+                optionsToggle.style.transform = `translateX(${offset})`;
+                options.style.transform = `translateX(${offset})`;
+            }
+
             optionsToggle.textContent = options.classList.contains('hiddenOptions') ? '⚙️' : '-';
         }
+
+        function updateStyles() {
+            const options = document.getElementById('options');
+            const optionsToggle = document.getElementById('optionsToggle');
+            const hiddenOptions = document.querySelector('.hiddenOptions');
+            const infoBox = document.getElementById('infoBox');
+            const hidden = document.querySelector('.hidden');
+
+            if (window.innerWidth < 600) {
+                options.style.width = '50%';
+                optionsToggle.style.left = 'calc(50% + 15px)';
+                if (hiddenOptions) { hiddenOptions.style.transform = `translateX(-${(window.innerWidth / 2 + 15)}px)`; }
+                infoBox.style.width = '32%';
+                if (hidden) {
+                    hidden.style.transform = `translateX(-${(window.innerWidth / 3.125 + 10)}px)`;
+                }
+            } else {
+                options.style.width = '400px';
+                optionsToggle.style.left = '415px';
+                if (hiddenOptions) {
+                    hiddenOptions.style.transform = 'translateX(-415px)';
+                }
+                infoBox.style.width = '300px';
+                if (hidden) {
+                    hidden.style.transform = `translateX(310px)`;
+                }
+            }
+        }
+
+        window.addEventListener('resize', updateStyles);
+        window.addEventListener('DOMContentLoaded', updateStyles);
     </script>
 </body>
