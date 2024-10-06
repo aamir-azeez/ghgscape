@@ -52,7 +52,7 @@ GHGScape should be used to find correlations that were overlooked. It should be 
 
 ## Coding Languages Used
 1. JavaScript
-2. React (JavaScript library)
+2. WebGL (JavaScript API)
 3. HTML
 4. CSS
 5. Python (for quick and simple automation)
